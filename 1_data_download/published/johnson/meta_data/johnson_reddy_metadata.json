@@ -1,0 +1,28 @@
+{
+    "input": {
+        "prefix": "A549_input",
+        "replicates": "B1 B2 B3 B4 B5 B6 B7 B8 B9 B10 B11 B12",
+        "read_pairs": "R1 R2",
+        "umi": "",
+        "suffix": ".fastq",
+        "shortform": "IN"
+    },
+    "output": {
+        "prefix": "A549_12_output",
+        "replicates": "B1 B2 B3 B4 B5",
+        "read_pairs": "R1 R2",
+        "umi": "",
+        "suffix": ".fastq",
+        "shortform": "OUT"
+    },
+    "genome": {
+        "ref_fasta": "/data5/deepro/genomes/hg38/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta",
+        "ref_twobit": "/data5/deepro/genomes/hg38/hg38.2bit",
+        "chrom_sizes": "/data5/deepro/genomes/hg38/GRCh38.chrom.sizes.simple.sorted"
+    },
+    "roi": {
+        "sorted": "",
+        "filtered": "",
+        "window": ""
+    }
+}

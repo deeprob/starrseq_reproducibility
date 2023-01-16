@@ -1,0 +1,28 @@
+{
+    "input": {
+        "prefix": "GM12878_input",
+        "replicates": "B1_T1 B1_T2 B1_T3 B1_T4 B2_T1 B2_T2 B2_T3 B2_T4 B3_T1 B3_T2 B3_T3 B3_T4 B4_T1 B4_T2 B4_T3 B4_T4 B5_T1 B5_T2 B5_T3 B5_T4",
+        "read_pairs": "R1 R2",
+        "umi": "",
+        "suffix": ".fastq.gz",
+        "shortform": "IN"
+    },
+    "output": {
+        "prefix": "GM12878_output",
+        "replicates": "B1_T1 B1_T2 B1_T3 B1_T4 B2_T1 B2_T2 B2_T3 B2_T4 B3_T1 B3_T2 B3_T3 B3_T4 B4_T1 B4_T2 B4_T3 B4_T4 B5_T1 B5_T2 B5_T3 B5_T4",
+        "read_pairs": "R1 R2",
+        "umi": "",
+        "suffix": ".fastq.gz",
+        "shortform": "OUT"
+    },
+    "genome": {
+        "ref_fasta": "/data5/deepro/genomes/hg19/hg19.fa",
+        "ref_twobit": "/data5/deepro/genomes/hg19/hg19.2bit",
+        "chrom_sizes": "/data5/deepro/genomes/hg19/hg19.chrom.sizes.simple.sorted"
+    },
+    "roi": {
+        "sorted": "",
+        "filtered": "",
+        "window": ""
+    }
+}
