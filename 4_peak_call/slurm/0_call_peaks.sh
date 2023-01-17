@@ -1,16 +1,16 @@
 #!/bin/bash
 #SBATCH --account=girirajan
 #SBATCH --partition=girirajan
-#SBATCH --job-name=starr_pqc
+#SBATCH --job-name=starr_peaks
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6
+#SBATCH --cpus-per-task=64
 #SBATCH --time=400:0:0
 #SBATCH --mem-per-cpu=20G
-#SBATCH --chdir /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/src
-#SBATCH -o /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/logs/out3_%a.log
-#SBATCH -e /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/logs/err3_%a.log
-#SBATCH --nodelist laila
-#SBATCH --array 1-8
+#SBATCH --chdir /data5/deepro/starrseq/main_library/3_peak_call/src
+#SBATCH -o /data5/deepro/starrseq/main_library/3_peak_call/slurm/logs/out_%a.log
+#SBATCH -e /data5/deepro/starrseq/main_library/3_peak_call/slurm/logs/err_%a.log
+#SBATCH --exclude=ramona,durga,laila
+#SBATCH --array 12
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -30,9 +30,9 @@ unset __conda_setup
 conda activate starrseq
 
 echo `date` starting job on $HOSTNAME
-LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/files/3_smap.txt)
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/main_library/3_peak_call/slurm/data/0_smap.txt)
 
 echo $LINE
-python /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/src/3_get_replicate_negative_control_coverage.py $LINE
+python /data5/deepro/starrseq/main_library/3_peak_call/src/0_call_peaks.py $LINE
 
 echo `date` ending job

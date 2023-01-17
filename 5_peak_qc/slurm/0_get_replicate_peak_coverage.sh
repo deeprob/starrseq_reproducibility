@@ -6,9 +6,9 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --time=400:0:0
 #SBATCH --mem-per-cpu=20G
-#SBATCH --chdir /data5/deepro/starrseq/main_library/4_quality_control_peaks/src
-#SBATCH -o /data5/deepro/starrseq/main_library/4_quality_control_peaks/slurm/logs/out_%a.log
-#SBATCH -e /data5/deepro/starrseq/main_library/4_quality_control_peaks/slurm/logs/err_%a.log
+#SBATCH --chdir /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/src
+#SBATCH -o /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/logs/out_%a.log
+#SBATCH -e /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/logs/err_%a.log
 #SBATCH --nodelist laila
 #SBATCH --array 3-8
 
@@ -30,9 +30,9 @@ unset __conda_setup
 conda activate starrseq
 
 echo `date` starting job on $HOSTNAME
-LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/main_library/4_quality_control_peaks/slurm/files/0_smap.txt)
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/files/0_smap.txt)
 
 echo $LINE
-python /data5/deepro/starrseq/main_library/4_quality_control_peaks/src/0_get_replicate_peak_coverage.py $LINE
+python /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/src/0_get_replicate_peak_coverage.py $LINE
 
 echo `date` ending job

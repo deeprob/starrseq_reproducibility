@@ -7,9 +7,9 @@
 #SBATCH --time=400:0:0
 #SBATCH --mem-per-cpu=20G
 #SBATCH --exclude=ramona,durga
-#SBATCH --chdir /data5/deepro/starrseq/main_library/4_quality_control_peaks/src
-#SBATCH -o /data5/deepro/starrseq/main_library/4_quality_control_peaks/slurm/logs/out4_%a.log
-#SBATCH -e /data5/deepro/starrseq/main_library/4_quality_control_peaks/slurm/logs/err4_%a.log
+#SBATCH --chdir /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/src
+#SBATCH -o /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/logs/out4_%a.log
+#SBATCH -e /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/logs/err4_%a.log
 #SBATCH --array 64
 
 # >>> conda initialize >>>
@@ -30,9 +30,9 @@ unset __conda_setup
 conda activate starrseq
 
 echo `date` starting job on $HOSTNAME
-LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/main_library/4_quality_control_peaks/slurm/files/4_smap.txt)
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/slurm/files/4_smap.txt)
 
 echo $LINE
-python /data5/deepro/starrseq/main_library/4_quality_control_peaks/src/4_get_reproducible_peaks.py $LINE
+python /data5/deepro/starrseq/papers/reproducibility/5_peak_qc/src/4_get_reproducible_peaks.py $LINE
 
 echo `date` ending job
