@@ -1,0 +1,5 @@
+https://www.encodeproject.org/search/?type=Experiment&searchTerm=hek293+chip&status=released&assay_title=Histone+ChIP-seq /data5/deepro/starrseq/main_library/0_region_selection/data/encode/hek293/chip/histone ENCODE3 GRCh38 --default
+https://www.encodeproject.org/search/?type=Experiment&searchTerm=hek293+chip&status=released&assay_title=TF+ChIP-seq&limit=all /data5/deepro/starrseq/main_library/0_region_selection/data/encode/hek293/chip/tf ENCODE3 GRCh38 --default
+https://www.encodeproject.org/search/?searchTerm=tcf7l2+hek&type=Experiment&assay_title=TF+ChIP-seq /data5/deepro/starrseq/main_library/0_region_selection/data/encode/hek293/chip/ custom hg19 --default
+https://www.encodeproject.org/search/?searchTerm=p300+hela&type=Experiment&assay_title=TF+ChIP-seq&status=released /data5/deepro/starrseq/main_library/0_region_selection/data/encode/hela/chip/tf ENCODE3 GRCh38 --ftype conservative_IDR_thresholded_peaks
+https://www.encodeproject.org/search/?searchTerm=p300+k562&type=Experiment&assay_title=TF+ChIP-seq&status=released /data5/deepro/starrseq/main_library/0_region_selection/data/encode/k562/chip/tf ENCODE3 GRCh38 --ftype conservative_IDR_thresholded_peaks
