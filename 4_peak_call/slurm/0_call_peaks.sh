@@ -7,8 +7,8 @@
 #SBATCH --time=400:0:0
 #SBATCH --mem-per-cpu=20G
 #SBATCH --chdir /data5/deepro/starrseq/main_library/3_peak_call/src
-#SBATCH -o /data5/deepro/starrseq/main_library/3_peak_call/slurm/logs/out_%a.log
-#SBATCH -e /data5/deepro/starrseq/main_library/3_peak_call/slurm/logs/err_%a.log
+#SBATCH -o /data5/deepro/starrseq/papers/reproducibility/4_peak_call/slurm/logs/out_%a.log
+#SBATCH -e /data5/deepro/starrseq/papers/reproducibility/4_peak_call/slurm/logs/err_%a.log
 #SBATCH --exclude=ramona,durga,laila
 #SBATCH --array 12
 
@@ -30,7 +30,7 @@ unset __conda_setup
 conda activate starrseq
 
 echo `date` starting job on $HOSTNAME
-LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/main_library/3_peak_call/slurm/data/0_smap.txt)
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/papers/reproducibility/4_peak_call/slurm/files/0_smap.txt)
 
 echo $LINE
 python /data5/deepro/starrseq/main_library/3_peak_call/src/0_call_peaks.py $LINE
