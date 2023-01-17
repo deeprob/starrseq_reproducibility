@@ -7,8 +7,8 @@
 #SBATCH --time=400:0:0
 #SBATCH --mem-per-cpu=25G
 #SBATCH --chdir /data5/deepro/starrseq/main_library/1_dedup_align_filter/src
-#SBATCH -o /data5/deepro/starrseq/main_library/1_dedup_align_filter/slurm/logs/out_%a.log
-#SBATCH -e /data5/deepro/starrseq/main_library/1_dedup_align_filter/slurm/logs/err_%a.log
+#SBATCH -o /data5/deepro/starrseq/papers/reproducibility/2_dedup_align_filter/slurm/logs/out_%a.log
+#SBATCH -e /data5/deepro/starrseq/papers/reproducibility/2_dedup_align_filter/slurm/logs/err_%a.log
 #SBATCH --exclude ramona,durga
 #SBATCH --array 14-15
 
@@ -30,7 +30,7 @@ unset __conda_setup
 conda activate starrseq
 
 echo `date` starting job on $HOSTNAME
-LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/main_library/1_dedup_align_filter/slurm/files/0_smap.txt)
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/papers/reproducibility/2_dedup_align_filter/slurm/files/0_smap.txt)
 
 echo $LINE
 python /data5/deepro/starrseq/main_library/1_dedup_align_filter/src/0_dedup_align_filter.py $LINE
