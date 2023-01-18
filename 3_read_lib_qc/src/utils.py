@@ -84,6 +84,20 @@ def get_lib_depth_beds_filepaths(store_dir, lib_short, lib_prefix, lib_reps):
     depth_beds = [get_depth_bed_filepaths(store_dir, lib_short, lib_prefix, lib_rep) for lib_rep in lib_reps.split()]
     return depth_beds
 
+##############
+# ROI create #
+##############
+
+def get_unique_fragments(in_bam, out_bed):
+    """
+    Breaks the genome into non-overlapping windows
+    """
+    # convert bam to bed
+    uniq_frag_bed = pybedtools.BedTool().merge(i=in_bam)
+    os.makedirs(os.path.dirname(out_bed), exist_ok=True)
+    uniq_frag_bed.moveto(out_bed)
+    return
+    
 ###########
 # Read QC #
 ###########

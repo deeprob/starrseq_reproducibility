@@ -1,6 +1,7 @@
 import argparse
 import utils as ut
 from itertools import starmap
+import os
 
 
 def main(
@@ -20,6 +21,11 @@ def main(
     calculate_depth,
     cores,
     ):
+    # if roi file is not given, make an roi file - making roi file from input bam file and using it for output libaries is recommended
+    if not roi_file:
+        input_bam = os.path.join(filtered_data_dir, library_short, f"{library_prefix}.bam")
+        roi_file = os.path.join(filtered_data_dir, library_short, "roi_file.bed")
+        ut.get_unique_fragments(input_bam, roi_file)
     # statistics_file
     stats_filepath = ut.get_statistics_filepath(storage_dir, library_short)
     stats_file = open(stats_filepath, "w")
@@ -104,7 +110,7 @@ if __name__ == "__main__":
     parser.add_argument("-l", "--read_length", type=int, default=150, help="Read length of sequencer :: used to calculate coverage")  
     parser.add_argument("-d", "--calculate_depth", action="store_true", help="Calculate library depth per region of interest")  
     parser.add_argument("-t", "--dedup_tool", type=str, default="starrdust", help="The deduplication tool used")
-    parser.add_argument("-c", "--cores", type=int, default=32, help="Read length of sequencer :: used to calculate coverage") 
+    parser.add_argument("-c", "--cores", type=int, default=32, help="Number of cores to parallelize tasks") 
 
     cli_args = parser.parse_args()
     lib_args = ut.create_args(cli_args.meta_file, cli_args.lib)
