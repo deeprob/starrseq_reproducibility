@@ -33,8 +33,7 @@ def create_args(meta_file, lib_name):
         reference_genome = meta_dict["genome"]["ref_fasta"],
         reference_genome_twobit = meta_dict["genome"]["ref_twobit"],
         genome_sizes = meta_dict["genome"]["chrom_sizes"],
-        roi_file = meta_dict["roi"]["sorted"],
-        roi_window_file = meta_dict["roi"]["window"],
+        roi_file = meta_dict["roi"]["sorted"]
     )
 
     return args

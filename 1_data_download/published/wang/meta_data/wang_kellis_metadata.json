@@ -21,8 +21,6 @@
         "chrom_sizes": "/data5/deepro/genomes/hg19/hg19.chrom.sizes.simple.sorted"
     },
     "roi": {
-        "sorted": "",
-        "filtered": "",
-        "window": ""
+        "sorted": ""
     }
 }

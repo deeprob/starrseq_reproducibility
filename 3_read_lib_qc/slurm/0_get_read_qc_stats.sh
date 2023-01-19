@@ -29,7 +29,7 @@ unset __conda_setup
 conda activate starrseq
 
 echo `date` starting job on $HOSTNAME
-LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/papers/reproducibility/3_read_lib_qc/slurm/data/0_smap.txt)
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /data5/deepro/starrseq/papers/reproducibility/3_read_lib_qc/slurm/files/0_smap.txt)
 
 echo $LINE
 python /data5/deepro/starrseq/papers/reproducibility/3_read_lib_qc/src/0_get_read_qc_stats.py $LINE

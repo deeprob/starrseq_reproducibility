@@ -77,8 +77,6 @@
         "chrom_sizes": "/data5/deepro/genomes/hg38/GRCh38.chrom.sizes.simple.sorted"
     },
     "roi": {
-        "sorted": "/data5/deepro/starrseq/main_library/0_region_selection/data/master/master.bed",
-        "filtered": "/data5/deepro/starrseq/main_library/2_quality_control_lib/data/master/IN/master_filtered.bed",
-        "window": "/data5/deepro/starrseq/main_library/2_quality_control_lib/data/window/IN/master_filtered_windows.bed"
+        "sorted": "/data5/deepro/starrseq/papers/reproducibility/0_in-house_dataset/data/master/master.bed"
     }
 }

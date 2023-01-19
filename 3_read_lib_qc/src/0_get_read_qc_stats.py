@@ -24,7 +24,7 @@ def main(
     # if roi file is not given, make an roi file - making roi file from input bam file and using it for output libaries is recommended
     if not roi_file:
         input_bam = os.path.join(filtered_data_dir, library_short, f"{library_prefix}.bam")
-        roi_file = os.path.join(filtered_data_dir, library_short, "roi_file.bed")
+        roi_file = os.path.join(storage_dir, library_short, "roi_file.bed")
         ut.get_unique_fragments(input_bam, roi_file)
     # statistics_file
     stats_filepath = ut.get_statistics_filepath(storage_dir, library_short)
