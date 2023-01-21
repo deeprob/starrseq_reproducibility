@@ -9,8 +9,8 @@
 #SBATCH --chdir /data5/deepro/starrseq/main_library/3_peak_call/src
 #SBATCH -o /data5/deepro/starrseq/papers/reproducibility/4_peak_call/slurm/logs/out_%a.log
 #SBATCH -e /data5/deepro/starrseq/papers/reproducibility/4_peak_call/slurm/logs/err_%a.log
-#SBATCH --exclude=ramona,durga,laila
-#SBATCH --array 12
+#SBATCH --exclude=ramona,durga
+#SBATCH --array 1-8
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
