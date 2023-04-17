@@ -140,6 +140,12 @@ def get_roi_depth(filtered_bam, roi_sorted_bed, bed_out):
     c.moveto(bed_out)
     return
 
+def read_and_extract_depth(cov_bed):
+    df = pd.read_csv(cov_bed, sep="\t", header=None)
+    roi_depth = df.iloc[:, -4]
+    return roi_depth
+
+
 ##################
 # create windows #
 ##################

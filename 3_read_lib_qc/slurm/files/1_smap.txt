@@ -1,0 +1,1 @@
+/data5/deepro/starrseq/papers/reproducibility/1_data_download/in_house/meta_data/metadata.json /data5/deepro/starrseq/papers/reproducibility/3_read_lib_qc/data/in_house/ /data5/deepro/starrseq/papers/reproducibility/3_read_lib_qc/data/in_house/ --libs input control atf2 ctcf foxa1 lef1 scrt1 tcf7l2 16p12.1 
